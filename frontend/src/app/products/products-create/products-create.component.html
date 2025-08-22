@@ -1,0 +1,40 @@
+<div class="w-full h-[100vh] flex justify-center items-center">
+    <div class="max-w-md p-4 border rounded shadow">
+        <h2 class="text-xl font-bold mb-4">Crear Producto</h2>
+    
+        <form [formGroup]="productForm" (ngSubmit)="submit()">
+    
+            <label class="block mb-2">
+                Nombre
+                <input type="text" formControlName="name" class="w-full border p-2 rounded" />
+            </label>
+    
+            <label class="block mb-2">
+                Número de lote
+                <input type="text" formControlName="batch_number" class="w-full border p-2 rounded" />
+            </label>
+    
+            <label class="block mb-2">
+                Precio
+                <input type="number" formControlName="price" class="w-full border p-2 rounded" />
+            </label>
+    
+            <label class="block mb-2">
+                Stock
+                <input type="number" formControlName="stock" class="w-full border p-2 rounded" />
+            </label>
+    
+            <label class="block mb-4">
+                Fecha de ingreso
+                <input type="date" formControlName="date_in" class="w-full border p-2 rounded" />
+            </label>
+    
+            <button type="submit" [disabled]="submitting"
+                class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
+                Crear Producto
+            </button>
+        </form>
+    
+        <p class="mt-4 text-green-600" *ngIf="message">{{ message }}</p>
+    </div>
+</div>

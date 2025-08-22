@@ -1,0 +1,9 @@
+<div *ngFor="let order of orders" class="order-card p-4 border rounded mb-4">
+  <h3>Orden #{{ order.id }} - {{ order.created_at | date:'short' }}</h3>
+  <ul>
+    <li *ngFor="let item of order.OrderItems">
+      {{ item.Product.name }} - Cantidad: {{ item.quantity }} - Precio: {{ item.price | currency }}
+    </li>
+  </ul>
+  <p>Total: {{getOrderTotal(order) | currency }}</p>
+</div>

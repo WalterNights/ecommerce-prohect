@@ -1,0 +1,20 @@
+<div class="w-full h-[100vh] flex flex-col justify-center items-center p-8 space-y-6">
+  <h1 class="text-4xl font-bold text-center">Bienvenido a E-Commerce Project</h1>
+  <p class="text-center text-gray-600">
+    Panel de prueba para tus endpoints del backend
+  </p>
+  <div class="w-full flex justify-between mt-6">
+    <button class="w-96 bg-blue-500 hover:bg-blue-600 text-white py-4 px-6 rounded shadow"
+      (click)="goToProductCreate()">
+      Crear Productos
+    </button>
+    <button class="w-96 bg-green-500 hover:bg-blue-600 text-white py-4 px-6 rounded shadow"
+      (click)="goToProductList()">
+      Listar Productos
+    </button>
+    <button class="w-96 bg-yellow-500 hover:bg-yellow-600 text-white py-4 px-6 rounded shadow"
+      (click)="goToOrderHistory()">
+      Ver Historial de Compras
+    </button>
+  </div>
+</div>

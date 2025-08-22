@@ -1,0 +1,19 @@
+<div class="w-full h-[100vh] flex flex-col justify-center items-center">
+    <h2 class="text-2xl font-bold mb-4">Productos</h2>
+
+    <div *ngIf="loading" class="text-gray-500">Cargando productos...</div>
+    <div *ngIf="error" class="text-red-600">{{ error }}</div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <div *ngFor="let product of products" class="border rounded shadow p-4 flex flex-col justify-between">
+            <h3 class="text-lg font-semibold mb-2">{{ product.name }}</h3>
+            <p><strong>Lote:</strong> {{ product.batch_number }}</p>
+            <p><strong>Precio:</strong> ${{ product.price }}</p>
+            <p><strong>Stock:</strong> {{ product.stock }}</p>
+            <p><strong>Ingreso:</strong> {{ product.date_in | date:'mediumDate' }}</p>
+            <button (click)="addToCart(product)" class="mt-4 bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-600">
+                Agregar al carrito
+            </button>
+        </div>
+    </div>
+</div>
